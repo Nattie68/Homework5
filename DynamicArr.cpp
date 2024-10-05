@@ -1,6 +1,5 @@
 #include "DynamicArr.h"
 
-const double DynamicArr::coeff_ = 2;
 
 DynamicArr::DynamicArr()
 {
