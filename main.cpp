@@ -3,19 +3,17 @@
 
 int main()
 {
-    DynamicArr arr1, arr2(3, 5);
-    DynamicArr arr3(arr1);
+	DynamicArr<std::string> d(4, "lol");
+	std::cout << d << std::endl;
 
-    for (size_t i = 0; i < 3; ++i)
-    {
-        arr3.push_back(i);
-    }
+	DynamicArr<std::string> dyn(std::move(d));
+	std::cout << d << std::endl
+			  << dyn << std::endl;
 
-    std::cout << arr3[0] << std::endl;
-    arr1 = arr3;
-    std::cout << arr1[0] << std::endl;
-    arr1[0] = 1.6;
-    std::cout << arr1[0] << std::endl;
+	DynamicArr<std::string> another_dyn = std::move(dyn);
+	std::cout << dyn << std::endl
+			  << another_dyn << std::endl;
 
-    return 0;
+	// fun();
+	return 0;
 }
